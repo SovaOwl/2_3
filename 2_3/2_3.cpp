@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 
 using namespace std;
@@ -12,34 +12,27 @@ struct address
 	int index = -999;
 };
 
+void add(address& p, string new_city, string new_street, int new_house_number, int new_apartment_number, int new_index)
+{
+	p.city = new_city;
+	p.street = new_street;
+	p.house_number = new_house_number;
+	p.apartment_number = new_apartment_number;
+	p.index = new_index;
+
+	cout << "Город: " << p.city << endl << "Улица: " << p.street << endl << "Номер дома: " << p.house_number << endl << "Номер квартиры: " << p.apartment_number << endl << "Индекс: " << p.index << endl << endl;
+}
+
 int main()
 {
 	setlocale(LC_ALL, "Rus");
+	address adr;
 
-	address a, b, c;
-	{
-		a.city = "Москва";
-		a.street = "Арбат";
-		a.house_number = 12;
-		a.apartment_number = 8;
-		a.index = 123456;
-	}
-	{
-		b.city = "Ижевск";
-		b.street = "Пушкина";
-		b.house_number = 59;
-		b.apartment_number = 143;
-		b.index = 953769;
-	}
-	{
-		c.city = "Париж";
-		c.street = "Пионерская";
-		c.house_number = 3;
-		c.apartment_number = 5;
-		c.index = 457654;
-	}
+	string new_city = "Москва";
+	string new_street = "Арбат";
+	int new_house_number = 12;
+	int new_apartment_number = 8;
+	int new_index = 123456;
 
-	cout << "Город: " << a.city << endl << "Улица: " << a.street << endl << "Номер дома: " << a.house_number << endl << "Номер квартиры: " << a.apartment_number << endl << "Индекс: " << a.index << endl << endl;
-	cout << "Город: " << b.city << endl << "Улица: " << b.street << endl << "Номер дома: " << b.house_number << endl << "Номер квартиры: " << b.apartment_number << endl << "Индекс: " << b.index << endl << endl;
-	cout << "Город: " << c.city << endl << "Улица: " << c.street << endl << "Номер дома: " << c.house_number << endl << "Номер квартиры: " << c.apartment_number << endl << "Индекс: " << c.index << endl << endl;
+	add(adr, new_city, new_street, new_house_number, new_apartment_number, new_index);
 }
