@@ -21,7 +21,7 @@ void add(address& p, string new_city, string new_street, int new_house_number, i
 	p.index = new_index;
 }
 
-void print_add(string new_city, string new_street, int new_house_number, int new_apartment_number, int new_index)
+void print_add(address& p, string new_city, string new_street, int new_house_number, int new_apartment_number, int new_index)
 {
 	cout << "Город: " << new_city << endl << "Улица: " << new_street << endl << "Номер дома: " << new_house_number << endl << "Номер квартиры: " << new_apartment_number << endl << "Индекс: " << new_index << endl << endl;
 
@@ -38,5 +38,5 @@ int main()
 	int new_index = 123456;
 
 	add(adr, new_city, new_street, new_house_number, new_apartment_number, new_index);
-	print_add(new_city, new_street, new_house_number, new_apartment_number, new_index);
+	print_add(adr, new_city, new_street, new_house_number, new_apartment_number, new_index);
 }
